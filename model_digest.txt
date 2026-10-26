@@ -1,0 +1,5 @@
+NAME                 ID              SIZE      MODIFIED    
+gemma4:12b-it-qat    38044be4f923    7.2 GB    4 hours ago    
+qwen3.5:9b-q4_K_M    56671c2ab938    6.6 GB    4 hours ago    
+ministral-3:8b       1922accd5827    6.0 GB    5 hours ago    
+mistral:latest       6577803aa9a0    4.4 GB    3 weeks ago  
