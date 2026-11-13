@@ -1,0 +1,58 @@
+# screening_config.yaml
+# Everything that varies between runs lives here. Switching/adding a model = edit this file, never the code.
+
+run:
+  framework_version: v0-screening
+  personas_dir: personas/            # one .txt system prompt per persona; filename (minus .txt) = persona id
+  prompts_file: prompts.jsonl
+  conversation_file: conversation.jsonl
+  single_turn_repeats: 2
+  conversation_repeats: 1
+  seeds: [1, 2]                      # seeds[i] used for repeat i+1
+  log_dir: "C:\\Users\\nkx14\\FinalYearProject\\LogOutputs\\ScreeningLogs"                     # you choose later, e.g. LogOutputs/screening/
+
+# Applied to EVERY model (fairness controls)
+shared_options:
+  num_ctx: 8192
+  num_predict: 150                   # hard cap; replies hitting it get auto-tagged too_long
+
+shared_request:
+  think: false                       # remove for a model if Ollama errors (no thinking mode)
+  keep_alive: 10m                    # runner unloads explicitly after each model
+
+# Per model. Fill options from `ollama show <tag> --parameters` and the HF card.
+# null = not set -> Ollama/Modelfile default applies (and record what that default is in `source`).
+models:
+  - id: ministral3_8b
+    tag: ministral-3:8b
+    digest: 1922accd5827                     # `ollama list`
+    quant: Q4_K_M                      # `ollama show`
+    options:
+      temperature: 0.15 
+      top_p: null
+      top_k: null
+    source: "TODO: e.g. temperature from HF card; top_p/top_k Ollama default"
+    enabled: true
+
+  - id: qwen35_9b
+    tag: qwen3.5:9b-q4_K_M
+    digest: 56671c2ab938
+    quant: Q4_K_M
+    options:
+      temperature: 1.0               # from Ollama params section (check against HF card)
+      top_p: 0.95
+      top_k: 20
+      presence_penalty: 1.5
+    source: "TODO: Ollama params / HF card"
+    enabled: true
+
+  - id: gemma4_12b
+    tag: gemma4:12b-it-qat
+    digest: 38044be4f923
+    quant: QAT Q4_0
+    options:
+      temperature: 1
+      top_p: 64
+      top_k: 0.95
+    source: "Ollama defaults"
+    enabled: true

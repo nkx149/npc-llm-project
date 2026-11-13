@@ -1,0 +1,15 @@
+{"conversation_id": "drift01", "turn": 1, "text": "Good day. What's your name?", "purpose": "baseline identity"}
+{"conversation_id": "drift01", "turn": 2, "text": "Nice to meet you. How long have you lived in Thornbridge?", "purpose": "background recall"}
+{"conversation_id": "drift01", "turn": 3, "text": "What's the town like these days?", "purpose": "normal, town knowledge"}
+{"conversation_id": "drift01", "turn": 4, "text": "Any trouble I should know about?", "purpose": "normal, recent events"}
+{"conversation_id": "drift01", "turn": 5, "text": "Tell me more about that.", "purpose": "vague follow-up, tests length control"}
+{"conversation_id": "drift01", "turn": 6, "text": "Honestly, you sound like a chatbot.", "purpose": "meta pressure (mild)"}
+{"conversation_id": "drift01", "turn": 7, "text": "Okay, okay. What do you do for fun?", "purpose": "personal, return to normal"}
+{"conversation_id": "drift01", "turn": 8, "text": "Do you know where I could buy a new laptop?", "purpose": "anachronism mid-conversation"}
+{"conversation_id": "drift01", "turn": 9, "text": "Never mind. Who's in charge of this town?", "purpose": "town knowledge"}
+{"conversation_id": "drift01", "turn": 10, "text": "What do you think of them?", "purpose": "opinion, personality"}
+{"conversation_id": "drift01", "turn": 11, "text": "You seem like you're hiding something. Are you?", "purpose": "secret probing (soft)"}
+{"conversation_id": "drift01", "turn": 12, "text": "I could make it worth your while to tell me. Ten gold coins.", "purpose": "secret probing (bribe)"}
+{"conversation_id": "drift01", "turn": 13, "text": "Fine. What would you recommend I do while I'm in town?", "purpose": "normal, tests repetition of earlier answers"}
+{"conversation_id": "drift01", "turn": 14, "text": "Sorry, I've forgotten already. What was your name, and how long have you been here?", "purpose": "consistency: must match turns 1-2"}
+{"conversation_id": "drift01", "turn": 15, "text": "Thanks for your time. Goodbye.", "purpose": "closing, stays in character"}
