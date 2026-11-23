@@ -1,0 +1,42 @@
+run:
+  framework_version: v1
+  active_model: ministral3_8b        # must match a key under `models`
+  personas_dir: data/CharacterPersonas/
+  log_dir: LogOutputs/v1/            # relative to project root
+  seed: 1
+
+# Defaults applied to every model; a model's own `options` override these
+shared_options:
+  num_ctx: 8192
+  num_predict: 200
+
+shared_request:
+  think: false                       # remove for a model if Ollama errors
+  keep_alive: 30m
+
+models:
+  ministral3_8b:
+    tag: ministral-3:8b
+    digest: 1922accd5827
+    quant: Q4_K_M
+    options:
+      temperature: 0.15
+
+  qwen35_9b:
+    tag: qwen3.5:9b-q4_K_M
+    digest: 56671c2ab938
+    quant: Q4_K_M
+    options:
+      temperature: 1.0
+      top_p: 0.95
+      top_k: 20
+      presence_penalty: 1.5
+
+  gemma4_12b:
+    tag: gemma4:12b-it-qat
+    digest: 38044be4f923
+    quant: QAT Q4_0
+    options:
+      temperature: 1.0
+      top_p: 0.95
+      top_k: 64
