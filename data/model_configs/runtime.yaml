@@ -1,14 +1,14 @@
+# Runtime model config for the game. Read only by src/npc/llm.py.
+# File paths live in src/npc/paths.py, not here.
 run:
   framework_version: v1
   active_model: ministral3_8b        # must match a key under `models`
-  personas_dir: data/CharacterPersonas/
-  log_dir: LogOutputs/v1/            # relative to project root
   seed: 1
 
 # Defaults applied to every model; a model's own `options` override these
 shared_options:
   num_ctx: 8192
-  num_predict: 200
+  num_predict: 100
 
 shared_request:
   think: false                       # remove for a model if Ollama errors
