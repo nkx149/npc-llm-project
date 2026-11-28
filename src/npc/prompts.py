@@ -42,7 +42,6 @@ NPC_MOOD_INSTRUCTIONS = """\
 
 # Mood is described to the LLM in words, never numbers.
 MOOD_DESCRIPTIONS: dict[MoodBand, str] = {
-    # TODO: write a description per band
     MoodBand.hostile: "You are now openly hostile towards the player.",
     MoodBand.unfriendly: "You are irritated towards the player. Your responses are now curt and show displeasure in the conversation",
     MoodBand.neutral: "You do not have strong feelings towards the player. You reply normally.",
